@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --fog: #e7ece6;
+  --paper: #f4f6f1;
+  --ink: #1a2a22;
+  --muted: #4d5c54;
+  --pine: #214033;
+  --pine-deep: #163028;
+  --moss: #3d5a45;
+  --signal: #8f1d1d;
+  --brass: #8d7344;
+  --ring: #214033;
+}
+
+@theme inline {
+  --color-fog: var(--fog);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-pine: var(--pine);
+  --color-pine-deep: var(--pine-deep);
+  --color-moss: var(--moss);
+  --color-signal: var(--signal);
+  --color-brass: var(--brass);
+  --font-sans: var(--font-sora);
+  --font-serif: var(--font-literata);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--fog);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100%;
+  z-index: 80;
+  background: var(--pine-deep);
+  color: white;
+  padding: 0.75rem 1rem;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.hon-stripe {
+  background: repeating-linear-gradient(
+    -45deg,
+    #8f1d1d,
+    #8f1d1d 10px,
+    #f4f6f1 10px,
+    #f4f6f1 20px
+  );
+}
