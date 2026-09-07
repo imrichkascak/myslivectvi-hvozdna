@@ -61,10 +61,10 @@ export function PageMotion({ children }: Props) {
         if (section && media) {
           gsap.fromTo(
             media,
-            { yPercent: -8, scale: 1.1 },
+            { yPercent: 0, scale: 1 },
             {
-              yPercent: 10,
-              scale: 1.02,
+              yPercent: 6,
+              scale: 1.04,
               ease: "none",
               scrollTrigger: {
                 trigger: section,

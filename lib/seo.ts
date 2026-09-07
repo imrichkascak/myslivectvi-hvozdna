@@ -4,10 +4,10 @@ import { site } from "@/lib/site";
 export const SITE_URL = "https://myslivectvi-hvozdna.vercel.app";
 
 const defaultOgImage = {
-  url: "/images/hunting-stand.jpg",
-  width: 1280,
-  height: 1333,
-  alt: "Posed na okraji lesa — Myslivecký spolek Vrchovina Hvozdná",
+  url: "/images/jelen-rije-wide.jpg",
+  width: 2400,
+  height: 1091,
+  alt: "Jelen v říji — Myslivecký spolek Vrchovina Hvozdná",
 };
 
 type PageSeoInput = {

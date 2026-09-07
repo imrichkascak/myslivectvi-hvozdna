@@ -68,8 +68,8 @@ export function SiteFooter() {
         </div>
       </div>
       <p className="border-t border-paper/15 px-4 py-4 text-center text-xs text-paper/70">
-        Ukázkový web pro schůzku s vedením. Fotografie: Unsplash. Logo a foto
-        vybavení: MS Vrchovina Hvozdná.
+        Ukázkový web pro schůzku s vedením. Fotografie: Unsplash, Pexels a
+        Wikimedia. Logo a foto vybavení: MS Vrchovina Hvozdná.
       </p>
     </footer>
   );

@@ -12,23 +12,23 @@ export default function HomePage() {
     <>
       <section
         data-parallax-section
-        className="relative min-h-[70vh] overflow-hidden"
+        className="relative min-h-[70vh] overflow-hidden md:min-h-[80vh]"
       >
         <div
           data-parallax
-          className="absolute -top-[12%] left-0 h-[124%] w-full will-change-transform"
+          className="absolute inset-0 origin-top will-change-transform"
         >
           <Image
-            src={asset("/images/hunting-stand.jpg")}
-            alt="Posed na okraji lesa, honitba Mysliveckého spolku Vrchovina Hvozdná"
+            src={asset("/images/jelen-rije-wide.jpg")}
+            alt="Jelen v říji, řev v podzimní trávě, ilustrační fotografie honitby"
             fill
             priority
-            className="object-cover object-right"
+            className="object-cover object-[58%_0%]"
             sizes="100vw"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-paper from-5% via-paper/75 via-40% to-transparent" />
-        <div className="relative mx-auto flex min-h-[70vh] max-w-6xl items-center px-4 py-16 sm:px-6">
+        <div className="absolute inset-0 bg-gradient-to-r from-paper from-[8%] via-paper/60 via-[36%] to-transparent" />
+        <div className="relative mx-auto flex min-h-[70vh] max-w-6xl items-center px-4 py-16 sm:px-6 md:min-h-[80vh]">
           <div
             data-reveal
             className="max-w-xl rounded-xl border border-pine/10 bg-paper/90 p-6 shadow-sm sm:p-10"
