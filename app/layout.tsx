@@ -49,9 +49,9 @@ export const metadata: Metadata = {
       "Myslivecký spolek Vrchovina Hvozdná pečuje o honitbu v obci Hvozdná na Zlínsku. Aktuality o honech, bezpečnost v lese a kontakt na výbor.",
     images: [
       {
-        url: "/images/jelen-rije-wide.jpg",
-        width: 2400,
-        height: 1091,
+        url: "/images/jelen-ruj.jpg",
+        width: 1024,
+        height: 682,
         alt: "Jelen v říji — Myslivecký spolek Vrchovina Hvozdná",
       },
     ],

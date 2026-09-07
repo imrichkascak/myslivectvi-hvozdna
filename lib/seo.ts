@@ -4,9 +4,9 @@ import { site } from "@/lib/site";
 export const SITE_URL = "https://myslivectvi-hvozdna.vercel.app";
 
 const defaultOgImage = {
-  url: "/images/jelen-rije-wide.jpg",
-  width: 2400,
-  height: 1091,
+  url: "/images/jelen-ruj.jpg",
+  width: 1024,
+  height: 682,
   alt: "Jelen v říji — Myslivecký spolek Vrchovina Hvozdná",
 };
 

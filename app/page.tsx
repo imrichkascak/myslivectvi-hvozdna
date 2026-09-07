@@ -19,11 +19,11 @@ export default function HomePage() {
           className="absolute inset-0 origin-top will-change-transform"
         >
           <Image
-            src={asset("/images/jelen-rije-wide.jpg")}
+            src={asset("/images/jelen-ruj.jpg")}
             alt="Jelen v říji, řev v podzimní trávě, ilustrační fotografie honitby"
             fill
             priority
-            className="object-cover object-[58%_0%]"
+            className="object-cover object-[62%_38%]"
             sizes="100vw"
           />
         </div>
@@ -92,13 +92,13 @@ export default function HomePage() {
           </ul>
         </div>
         <Image
-          src={asset("/images/deer.jpg")}
-          alt="Srnec ve volné krajině, ilustrační fotografie zvěře"
-          width={800}
-          height={1000}
+          src={asset("/images/krmelec-zima.jpg")}
+          alt="Srnčí zvěř u krmelce v zimě, ilustrace péče o honitbu"
+          width={700}
+          height={465}
           data-reveal
           data-reveal-delay="0.08"
-          className="h-[28rem] w-full rounded-xl object-cover"
+          className="h-[28rem] w-full rounded-xl object-cover object-[40%_center]"
         />
       </section>
 
