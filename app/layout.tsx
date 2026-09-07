@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/hunting-stand.jpg",
-        width: 2000,
+        width: 1280,
         height: 1333,
         alt: "Posed na okraji lesa — Myslivecký spolek Vrchovina Hvozdná",
       },

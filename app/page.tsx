@@ -23,11 +23,11 @@ export default function HomePage() {
             alt="Posed na okraji lesa, honitba Mysliveckého spolku Vrchovina Hvozdná"
             fill
             priority
-            className="object-cover object-[72%_center]"
+            className="object-cover object-right"
             sizes="100vw"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-paper via-paper/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-paper from-5% via-paper/75 via-40% to-transparent" />
         <div className="relative mx-auto flex min-h-[70vh] max-w-6xl items-center px-4 py-16 sm:px-6">
           <div
             data-reveal

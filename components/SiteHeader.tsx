@@ -33,7 +33,7 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md border border-pine/20 px-3 text-sm font-medium text-pine md:hidden"
+          className="inline-flex min-h-12 min-w-12 items-center justify-center rounded-md border border-pine/20 px-4 text-base font-medium text-pine md:hidden"
           aria-expanded={open}
           aria-controls="site-nav"
           onClick={() => setOpen((value) => !value)}
@@ -44,7 +44,7 @@ export function SiteHeader() {
         <nav
           id="site-nav"
           aria-label="Hlavní navigace"
-          className={`${open ? "flex" : "hidden"} absolute left-0 right-0 top-full flex-col border-b border-pine/15 bg-paper px-4 py-4 md:static md:flex md:flex-row md:border-0 md:bg-transparent md:px-0 md:py-0`}
+          className={`${open ? "flex" : "hidden"} absolute left-0 right-0 top-full flex-col gap-1.5 border-b border-pine/15 bg-paper px-4 py-4 md:static md:flex md:flex-row md:gap-0 md:border-0 md:bg-transparent md:px-0 md:py-0`}
         >
           {nav.map((item) => {
             const current =
@@ -56,7 +56,7 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 aria-current={current ? "page" : undefined}
-                className={`min-h-11 rounded-md px-3 py-2 text-sm font-medium ${
+                className={`flex min-h-16 items-center rounded-md px-4 py-4 text-xl font-medium md:min-h-11 md:px-3 md:py-2 md:text-sm ${
                   current
                     ? "text-pine-deep underline decoration-brass decoration-2 underline-offset-4"
                     : "text-muted hover:text-pine-deep"
