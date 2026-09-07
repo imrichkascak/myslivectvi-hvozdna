@@ -18,10 +18,9 @@ export const posts: Post[] = [
     date: "2025-11-10",
     excerpt:
       "V sobotu 15. 11. 2025 se v revíru katastru obce Hvozdná uskuteční hon na divoké prasata. Žádáme návštěvníky lesa, aby se v uvedeném čase v revíru nezdržovali.",
-    image: "/images/wild-boar.jpg",
+    image: "/images/wild-boar-snow.jpg",
     imageAlt:
-      "Detail hlavy divočáka v přírodě, ilustrační fotografie k oznámení honu",
-    imageCredit: "Foto: Unsplash, volně k užití",
+      "Dospělý divočák ve sněhu, ilustrační fotografie k oznámení honu",
     body: [
       "Myslivecký spolek Vrchovina Hvozdná dne 15. 11. 2025 uskuteční hon na divoké prasata. Lov se uskuteční v revíru katastru obce Hvozdná od 8:00 do 15:00 hod.",
       "Žádáme návštěvníky lesa, aby se v tomto čase nezdržovali v revíru. Pohyb v honitbě během honu je životu nebezpečný.",
