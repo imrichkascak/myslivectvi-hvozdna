@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { asset } from "@/lib/media";
 import { useState } from "react";
 import { nav, site } from "@/lib/site";
 
@@ -15,11 +16,11 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link
           href="/"
-          className="flex min-h-11 items-center gap-3 rounded-sm"
+          className="flex min-h-11 items-center gap-3 rounded-md"
           onClick={() => setOpen(false)}
         >
           <Image
-            src="/images/logo.jpg"
+            src={asset("/images/logo.jpg")}
             alt=""
             width={56}
             height={56}
@@ -32,7 +33,7 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-sm border border-pine/20 px-3 text-sm font-medium text-pine md:hidden"
+          className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md border border-pine/20 px-3 text-sm font-medium text-pine md:hidden"
           aria-expanded={open}
           aria-controls="site-nav"
           onClick={() => setOpen((value) => !value)}
@@ -55,7 +56,7 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 aria-current={current ? "page" : undefined}
-                className={`min-h-11 px-3 py-2 text-sm font-medium ${
+                className={`min-h-11 rounded-md px-3 py-2 text-sm font-medium ${
                   current
                     ? "text-pine-deep underline decoration-brass decoration-2 underline-offset-4"
                     : "text-muted hover:text-pine-deep"

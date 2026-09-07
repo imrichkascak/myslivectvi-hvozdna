@@ -9,7 +9,7 @@ export default function NotFound() {
       </p>
       <Link
         href="/"
-        className="mt-8 inline-flex min-h-11 items-center bg-pine px-5 text-sm font-semibold text-paper"
+        className="mt-8 inline-flex min-h-11 items-center rounded-md bg-pine px-5 text-sm font-semibold text-paper"
       >
         Zpět na úvod
       </Link>

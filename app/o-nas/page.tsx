@@ -1,12 +1,9 @@
 import Image from "next/image";
-import type { Metadata } from "next";
 import { site } from "@/lib/site";
+import { asset } from "@/lib/media";
+import { aboutSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "O spolku",
-  description:
-    "Myslivecký spolek Vrchovina Hvozdná vznikl v roce 1992. Sdružuje členy ke společnému výkonu práva myslivosti v honitbě Hvozdná.",
-};
+export const metadata = aboutSeo;
 
 export default function AboutPage() {
   return (
@@ -23,12 +20,12 @@ export default function AboutPage() {
       </p>
 
       <Image
-        src="/images/oak-canopy.jpg"
+        src={asset("/images/oak-canopy.jpg")}
         alt="Koruny dubů v lesním porostu"
         width={1400}
         height={900}
         data-reveal
-        className="mt-10 h-72 w-full object-cover"
+        className="mt-10 h-72 w-full rounded-xl object-cover"
       />
 
       <h2 data-reveal className="mt-12 font-serif text-2xl text-pine-deep">
@@ -56,7 +53,7 @@ export default function AboutPage() {
       </p>
       <ul
         data-reveal-stagger
-        className="mt-6 divide-y divide-pine/10 border border-pine/10"
+        className="mt-6 divide-y divide-pine/10 overflow-hidden rounded-xl border border-pine/10"
       >
         {site.committee.map((person) => (
           <li

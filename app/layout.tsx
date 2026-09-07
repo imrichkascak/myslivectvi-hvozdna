@@ -4,6 +4,7 @@ import { DemoBanner } from "@/components/DemoBanner";
 import { PageMotion } from "@/components/PageMotion";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { SITE_URL } from "@/lib/seo";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -20,24 +21,46 @@ const literata = Literata({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://myslivectvi-hvozdna.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: `${site.name} | Myslivost Hvozdná`,
+    default: `${site.name} | Honitba Hvozdná`,
     template: `%s | ${site.shortName}`,
   },
   description:
-    "Oficiální ukázkové stránky Mysliveckého spolku Vrchovina Hvozdná. Honitba v katastru obce Hvozdná, aktuality o honech, péče o zvěř a krajinu.",
+    "Myslivecký spolek Vrchovina Hvozdná pečuje o honitbu v obci Hvozdná na Zlínsku. Aktuality o honech, bezpečnost v lese a kontakt na výbor.",
+  applicationName: site.shortName,
+  authors: [{ name: site.name }],
+  creator: site.name,
+  publisher: site.name,
+  category: "myslivost",
   keywords: [
-    "myslivost Hvozdná",
     "Myslivecký spolek Vrchovina Hvozdná",
+    "myslivost Hvozdná",
     "honitba Hvozdná",
-    "myslivci Zlínsko",
+    "hon Hvozdná",
     "MS Vrchovina",
   ],
   openGraph: {
     locale: "cs_CZ",
     type: "website",
     siteName: site.name,
+    title: `${site.name} | Honitba Hvozdná`,
+    description:
+      "Myslivecký spolek Vrchovina Hvozdná pečuje o honitbu v obci Hvozdná na Zlínsku. Aktuality o honech, bezpečnost v lese a kontakt na výbor.",
+    images: [
+      {
+        url: "/images/hunting-stand.jpg",
+        width: 2000,
+        height: 1333,
+        alt: "Posed na okraji lesa — Myslivecký spolek Vrchovina Hvozdná",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} | Honitba Hvozdná`,
+    description:
+      "Myslivecký spolek Vrchovina Hvozdná pečuje o honitbu v obci Hvozdná na Zlínsku. Aktuality o honech, bezpečnost v lese a kontakt na výbor.",
   },
   robots: { index: true, follow: true },
 };
@@ -57,7 +80,9 @@ const jsonLd = {
     addressCountry: "CZ",
   },
   areaServed: "Hvozdná",
-  description: site.activity,
+  url: SITE_URL,
+  description:
+    "Myslivecký spolek Vrchovina Hvozdná pečuje o honitbu v obci Hvozdná na Zlínsku.",
 };
 
 export default function RootLayout({

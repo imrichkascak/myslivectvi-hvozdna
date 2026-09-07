@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
 import { posts } from "@/lib/posts";
+import { SITE_URL } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://myslivectvi-hvozdna.vercel.app";
+  const base = SITE_URL;
   const staticRoutes = ["", "/o-nas", "/honitba", "/aktuality", "/kontakt"].map(
     (path) => ({
       url: `${base}${path}`,

@@ -1,12 +1,7 @@
 import Link from "next/link";
-import type { Metadata } from "next";
+import { kickoffSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Kick-off: návrh webu",
-  description:
-    "Podklad ke schůzce s vedením Mysliveckého spolku Vrchovina Hvozdná. Návrh struktury webu a otevřené otázky.",
-  robots: { index: false, follow: false },
-};
+export const metadata = kickoffSeo;
 
 const questions = [
   "Které telefonní číslo a e-mail smíme zveřejnit?",
@@ -76,7 +71,7 @@ export default function KickoffPage() {
       </h2>
       <ul data-reveal-stagger className="mt-4 space-y-3">
         {questions.map((item) => (
-          <li key={item} className="border border-pine/10 bg-paper px-4 py-3">
+          <li key={item} className="rounded-lg border border-pine/10 bg-paper px-4 py-3">
             {item}
           </li>
         ))}

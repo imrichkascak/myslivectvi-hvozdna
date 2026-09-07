@@ -1,11 +1,8 @@
 import Image from "next/image";
-import type { Metadata } from "next";
+import { asset } from "@/lib/media";
+import { honitbaSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Honitba a bezpečnost v lese",
-  description:
-    "Informace o honitbě Mysliveckého spolku Vrchovina Hvozdná v katastru obce Hvozdná. Jak se chovat v lese v den honu.",
-};
+export const metadata = honitbaSeo;
 
 export default function HonitbaPage() {
   return (
@@ -19,17 +16,17 @@ export default function HonitbaPage() {
       </p>
 
       <Image
-        src="/images/pine-stand.jpg"
+        src={asset("/images/pine-stand.jpg")}
         alt="Hustý jehličnatý porost, ilustrace honitby"
         width={1600}
         height={900}
         data-reveal
-        className="mt-10 h-80 w-full object-cover"
+        className="mt-10 h-80 w-full rounded-xl object-cover"
       />
 
       <section
         data-reveal
-        className="mt-12 border-l-4 border-signal bg-paper p-6"
+        className="mt-12 rounded-xl border-l-4 border-signal bg-paper p-6"
       >
         <h2 className="font-serif text-2xl text-signal">Když probíhá hon</h2>
         <p className="mt-3 leading-relaxed text-muted">

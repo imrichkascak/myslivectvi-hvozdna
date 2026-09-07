@@ -1,13 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { Metadata } from "next";
 import { formatDate, posts } from "@/lib/posts";
+import { asset } from "@/lib/media";
+import { newsSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Aktuality",
-  description:
-    "Zprávy Mysliveckého spolku Vrchovina Hvozdná: hony, vybavení areálu a dění v honitbě.",
-};
+export const metadata = newsSeo;
 
 export default function BlogPage() {
   return (
@@ -25,11 +22,11 @@ export default function BlogPage() {
             <article className="grid gap-6 border-b border-pine/10 pb-10 md:grid-cols-[16rem_1fr]">
               <Link href={`/aktuality/${post.slug}`}>
                 <Image
-                  src={post.image}
+                  src={asset(post.image)}
                   alt={post.imageAlt}
                   width={640}
                   height={420}
-                  className="h-44 w-full object-cover"
+                  className="h-44 w-full rounded-lg object-cover"
                 />
               </Link>
               <div>

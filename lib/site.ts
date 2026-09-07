@@ -26,6 +26,12 @@ export const site = {
     "https://www.openstreetmap.org/export/embed.html?bbox=17.722%2C49.232%2C17.763%2C49.256&layer=mapnik&marker=49.24360%2C17.74241",
   mapLink:
     "https://www.openstreetmap.org/?mlat=49.24360&mlon=17.74241#map=15/49.24360/17.74241",
+  socials: [
+    {
+      label: "Facebook",
+      href: "https://www.facebook.com/groups/1118263047179236/",
+    },
+  ],
 } as const;
 
 export const nav = [

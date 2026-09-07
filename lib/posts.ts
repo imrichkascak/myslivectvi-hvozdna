@@ -1,6 +1,8 @@
 export type Post = {
   slug: string;
   title: string;
+  /** Kratší titulek pro <title> a Open Graph, pokud je článek dlouhý. */
+  seoTitle?: string;
   date: string;
   excerpt: string;
   image: string;
@@ -29,6 +31,7 @@ export const posts: Post[] = [
   {
     slug: "nakup-vybaveni-pro-spolek",
     title: "Nákup vybavení pro Myslivecký spolek Vrchovina Hvozdná",
+    seoTitle: "Nákup vybavení pro honitbu",
     date: "2025-09-01",
     excerpt:
       "Díky spolupráci s MAS Vizovicko a Slušovicko jsme pořídili techniku na údržbu areálu. Projekt spolufinancovala Evropská unie.",
