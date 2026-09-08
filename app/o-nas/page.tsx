@@ -7,12 +7,12 @@ export const metadata = aboutSeo;
 
 export default function AboutPage() {
   return (
-    <article className="mx-auto max-w-4xl px-4 py-16 sm:px-6">
+    <article className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
       <p data-reveal className="text-xs font-semibold tracking-[0.18em] text-brass uppercase">
         IČO {site.ico}
       </p>
       <h1 data-reveal className="mt-3 font-serif text-4xl text-pine-deep">
-        O spolku
+        O nás
       </h1>
       <p data-reveal className="mt-6 text-lg leading-relaxed text-muted">
         {site.name} je zapsán u {site.court}. Vznikl 28. 7. 1992. Sídlo má na
@@ -20,11 +20,11 @@ export default function AboutPage() {
       </p>
 
       <Image
-        src={asset("/images/oak-canopy.jpg")}
-        alt="Jezero obklopené jehličnatým lesem a horami"
-        width={1400}
-        height={900}
-        data-reveal
+        src={asset("/images/hvozdna-obec.jpg")}
+        alt="Letecký pohled na obec Hvozdná s kostelem a okolní krajinou"
+        width={1024}
+        height={576}
+        priority
         className="mt-10 h-72 w-full rounded-xl object-cover"
       />
 
@@ -44,17 +44,14 @@ export default function AboutPage() {
         domácnostem.
       </p>
 
-      <h2 data-reveal className="mt-12 font-serif text-2xl text-pine-deep">
+      <h2 className="mt-12 font-serif text-2xl text-pine-deep">
         Výbor spolku
       </h2>
-      <p data-reveal className="mt-3 text-sm text-muted">
+      <p className="mt-3 text-sm text-muted">
         Údaje podle veřejného rejstříku (stav k datu přípravy ukázky). Osobní
         adresy členů na webu neuvádíme.
       </p>
-      <ul
-        data-reveal-stagger
-        className="mt-6 divide-y divide-pine/10 overflow-hidden rounded-xl border border-pine/10"
-      >
+      <ul className="mt-6 divide-y divide-pine/10 overflow-hidden rounded-xl border border-pine/10">
         {site.committee.map((person) => (
           <li
             key={person.role}

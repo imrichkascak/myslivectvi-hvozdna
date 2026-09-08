@@ -67,7 +67,7 @@ export const homeSeo = pageMetadata({
 });
 
 export const aboutSeo = pageMetadata({
-  title: "O spolku",
+  title: "O nás",
   path: "/o-nas",
   description:
     "MS Vrchovina Hvozdná vznikl 28. 7. 1992. Sídlo Myslivecká 38, IČO 48472964. Výbor spolku a společný výkon práva myslivosti ve Hvozdné.",

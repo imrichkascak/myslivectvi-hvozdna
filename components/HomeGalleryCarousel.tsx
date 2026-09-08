@@ -114,7 +114,7 @@ export function HomeGalleryCarousel({ photos, children }: Props) {
         id={listId}
         aria-label="Ukázka fotogalerie"
         tabIndex={0}
-        className="scrollbar-none mt-8 flex snap-x snap-proximity gap-3 overflow-x-auto overscroll-x-contain scroll-ps-[max(1rem,calc((100vw-72rem)/2+1rem))] pr-4 pl-[max(1rem,calc((100vw-72rem)/2+1rem))] focus-visible:outline-offset-4 sm:scroll-ps-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))] sm:pr-6 sm:pl-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]"
+        className="scrollbar-none mt-8 flex snap-x snap-proximity gap-3 overflow-x-auto overscroll-x-contain scroll-ps-[max(1rem,calc((100%-72rem)/2+1rem))] pr-4 pl-[max(1rem,calc((100%-72rem)/2+1rem))] focus-visible:outline-offset-4 sm:scroll-ps-[max(1.5rem,calc((100%-72rem)/2+1.5rem))] sm:pr-6 sm:pl-[max(1.5rem,calc((100%-72rem)/2+1.5rem))]"
         onKeyDown={(event) => {
           if (event.key === "ArrowRight") {
             event.preventDefault();

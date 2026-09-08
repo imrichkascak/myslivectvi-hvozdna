@@ -36,7 +36,7 @@ export const site = {
 
 export const nav = [
   { href: "/", label: "Úvod" },
-  { href: "/o-nas", label: "O spolku" },
+  { href: "/o-nas", label: "O nás" },
   { href: "/honitba", label: "Honitba" },
   { href: "/fotogalerie", label: "Fotogalerie" },
   { href: "/aktuality", label: "Aktuality" },

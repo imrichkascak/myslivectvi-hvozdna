@@ -104,61 +104,57 @@ export default function HomePage() {
           />
       </section>
 
-      <section className="bg-paper px-4 pt-[clamp(5rem,11vh,8.5rem)] pb-[clamp(5rem,11vh,8.5rem)] sm:px-6">
-        <div className="mx-auto max-w-6xl">
-          <HomeGalleryCarousel photos={homeCarouselPhotos}>
-            <div data-reveal>
-              <h2 className="font-serif text-3xl text-pine-deep">Fotogalerie</h2>
-              <p className="mt-3 max-w-2xl leading-relaxed text-muted">
-                Snímky z honitby a areálu. Listujte šipkami nebo tahem.
-              </p>
-            </div>
-          </HomeGalleryCarousel>
-        </div>
+      <section className="overflow-x-clip bg-paper pt-[clamp(5rem,11vh,8.5rem)] pb-[clamp(5rem,11vh,8.5rem)]">
+        <HomeGalleryCarousel photos={homeCarouselPhotos}>
+          <div data-reveal>
+            <h2 className="font-serif text-3xl text-pine-deep">Fotogalerie</h2>
+            <p className="mt-3 max-w-2xl leading-relaxed text-muted">
+              Snímky z honitby a areálu. Listujte šipkami nebo tahem.
+            </p>
+          </div>
+        </HomeGalleryCarousel>
       </section>
 
-      <section className="px-4 pt-[clamp(5rem,11vh,8.5rem)] pb-[clamp(5rem,11vh,8.5rem)] sm:px-6">
-        <div className="mx-auto max-w-6xl">
-          <div data-reveal className="flex items-end justify-between gap-4">
-            <h2 className="font-serif text-3xl leading-none text-pine-deep">
-              Aktuality
-            </h2>
-            <Link
-              href="/aktuality"
-              className="inline-flex min-h-11 items-end text-sm font-semibold leading-none text-pine underline-offset-4 hover:underline"
-            >
-              Všechny zprávy
-            </Link>
-          </div>
-          <ul data-reveal-stagger className="mt-12 grid gap-6 md:grid-cols-2">
-            {posts.map((post) => (
-              <li key={post.slug}>
-                <article className="h-full overflow-hidden rounded-xl border border-pine/10 bg-paper">
-                  <Link href={`/aktuality/${post.slug}`} className="block">
-                    <Image
-                      src={asset(post.image)}
-                      alt={post.imageAlt}
-                      width={1200}
-                      height={800}
-                      className="h-52 w-full object-cover"
-                    />
-                    <div className="p-5">
-                      <p className="text-xs tracking-wide text-brass uppercase">
-                        <time dateTime={post.date}>{formatDate(post.date)}</time>
-                      </p>
-                      <h3 className="mt-2 font-serif text-2xl text-pine-deep">
-                        {post.title}
-                      </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-muted">
-                        {post.excerpt}
-                      </p>
-                    </div>
-                  </Link>
-                </article>
-              </li>
-            ))}
-          </ul>
+      <section className="mx-auto max-w-6xl px-4 pt-[clamp(5rem,11vh,8.5rem)] pb-[clamp(5rem,11vh,8.5rem)] sm:px-6">
+        <div data-reveal className="flex items-end justify-between gap-4">
+          <h2 className="font-serif text-3xl leading-none text-pine-deep">
+            Aktuality
+          </h2>
+          <Link
+            href="/aktuality"
+            className="inline-flex min-h-11 items-end text-sm font-semibold leading-none text-pine underline-offset-4 hover:underline"
+          >
+            Všechny zprávy
+          </Link>
         </div>
+        <ul data-reveal-stagger className="mt-12 grid gap-6 md:grid-cols-2">
+          {posts.map((post) => (
+            <li key={post.slug}>
+              <article className="h-full overflow-hidden rounded-xl border border-pine/10 bg-paper">
+                <Link href={`/aktuality/${post.slug}`} className="block">
+                  <Image
+                    src={asset(post.image)}
+                    alt={post.imageAlt}
+                    width={1200}
+                    height={800}
+                    className="h-52 w-full object-cover"
+                  />
+                  <div className="p-5">
+                    <p className="text-xs tracking-wide text-brass uppercase">
+                      <time dateTime={post.date}>{formatDate(post.date)}</time>
+                    </p>
+                    <h3 className="mt-2 font-serif text-2xl text-pine-deep">
+                      {post.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted">
+                      {post.excerpt}
+                    </p>
+                  </div>
+                </Link>
+              </article>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pt-[clamp(5rem,11vh,8.5rem)] pb-[clamp(5.5rem,12vh,9rem)] sm:px-6">

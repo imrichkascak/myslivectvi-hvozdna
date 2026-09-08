@@ -12,7 +12,7 @@ const pages = [
   },
   {
     href: "/o-nas",
-    label: "O spolku",
+    label: "O nás",
     detail: "vznik 1992, činnost, výbor podle rejstříku (jména a funkce)",
   },
   {
