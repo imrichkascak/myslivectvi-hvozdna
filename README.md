@@ -6,9 +6,9 @@ Ukázkový web spolku ve Hvozdné (Next.js, Tailwind CSS). Slouží jako podklad
 
 - `/` úvod
 - `/o-nas` o spolku a výboru
-- `/honitba` honitba a bezpečnost v lese
+- `/honitba` honitba, bezpečnost v den honu a jak revír během roku funguje
 - `/aktuality` zprávy
-- `/kontakt` sídlo a mapa
+- `/kontakt` formulář, sídlo a mapa
 - `/kickoff` interní podklad ke schůzce (noindex)
 
 ## Vývoj
@@ -19,6 +19,16 @@ npm run dev
 ```
 
 Otevřete [http://localhost:3000](http://localhost:3000).
+
+Kontaktní formulář odesílá e-mail přes [Resend](https://resend.com). V `.env.local` (a na Vercelu) nastavte:
+
+```
+CONTACT_EMAIL=adresa-vyboru@example.com
+RESEND_API_KEY=re_...
+CONTACT_FROM_EMAIL=MS Vrchovina Hvozdná <onboarding@resend.dev>
+```
+
+`CONTACT_FROM_EMAIL` je volitelné. Dokud není ověřená vlastní doména, Resend doručí zprávy jen na e-mail účtu, ze kterého klíč pochází.
 
 ## Zdroje údajů
 

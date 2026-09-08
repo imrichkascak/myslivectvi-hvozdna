@@ -52,22 +52,32 @@ export function HomeGalleryCarousel({ photos, children }: Props) {
 
   const scrollBySlide = (direction: -1 | 1) => {
     const scroller = scrollerRef.current;
-    const slide = scroller?.querySelector("li");
-    if (!scroller || !slide) return;
-    const gap = 12;
+    if (!scroller) return;
+    const slides = [...scroller.querySelectorAll<HTMLElement>(":scope > li")];
+    const pad = Number.parseFloat(getComputedStyle(scroller).paddingInlineStart);
+    const origin = scroller.scrollLeft + pad;
     const reduceMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
-    scroller.scrollBy({
-      left: direction * (slide.clientWidth + gap),
-      behavior: reduceMotion ? "auto" : "smooth",
-    });
+    const behavior: ScrollBehavior = reduceMotion ? "auto" : "smooth";
+    const next =
+      direction === 1
+        ? slides.find((slide) => slide.offsetLeft > origin + 16)
+        : [...slides].reverse().find((slide) => slide.offsetLeft < origin - 16);
+
+    if (next) {
+      scroller.scrollTo({ left: next.offsetLeft - pad, behavior });
+    } else if (direction === 1) {
+      scroller.scrollTo({ left: scroller.scrollWidth, behavior });
+    } else {
+      scroller.scrollTo({ left: 0, behavior });
+    }
     requestAnimationFrame(updateEdges);
   };
 
   return (
     <div>
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
+      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 sm:flex-row sm:items-end sm:justify-between sm:gap-6 sm:px-6">
         <div className="min-w-0">{children}</div>
         <div className="flex shrink-0 items-center gap-2 sm:pb-0.5">
           <button
@@ -104,7 +114,7 @@ export function HomeGalleryCarousel({ photos, children }: Props) {
         id={listId}
         aria-label="Ukázka fotogalerie"
         tabIndex={0}
-        className="scrollbar-none mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain focus-visible:outline-offset-4"
+        className="scrollbar-none mt-8 flex snap-x snap-proximity gap-3 overflow-x-auto overscroll-x-contain scroll-ps-[max(1rem,calc((100vw-72rem)/2+1rem))] pr-4 pl-[max(1rem,calc((100vw-72rem)/2+1rem))] focus-visible:outline-offset-4 sm:scroll-ps-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))] sm:pr-6 sm:pl-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]"
         onKeyDown={(event) => {
           if (event.key === "ArrowRight") {
             event.preventDefault();
@@ -125,18 +135,18 @@ export function HomeGalleryCarousel({ photos, children }: Props) {
         {photos.map((photo) => (
           <li
             key={photo.id}
-            className="w-[min(88vw,32rem)] shrink-0 snap-start sm:w-[min(72vw,38rem)] lg:w-[min(58vw,42rem)]"
+            className="h-[22rem] shrink-0 snap-start sm:h-[28rem] lg:h-[32rem]"
+            style={{ aspectRatio: `${photo.width} / ${photo.height}` }}
           >
-            <figure className="relative overflow-hidden rounded-xl">
+            <figure className="relative h-full w-full overflow-hidden rounded-xl">
               <Image
                 src={asset(photo.src)}
                 alt={photo.alt}
-                width={photo.width}
-                height={photo.height}
-                className="h-[22rem] w-full object-cover sm:h-[28rem] lg:h-[32rem]"
-                sizes="(min-width: 1024px) 42rem, (min-width: 640px) 38rem, 88vw"
+                fill
+                className="object-contain"
+                sizes="(min-width: 1024px) 50rem, 90vw"
               />
-              <figcaption className="glass-chip absolute bottom-3 left-3 rounded-xl px-3 py-1.5 font-serif text-sm font-semibold text-pine-deep sm:bottom-4 sm:left-4 sm:px-3.5 sm:py-2 sm:text-base">
+              <figcaption className="glass-chip absolute bottom-3 left-3 rounded-xl px-3 py-1.5 font-serif text-sm font-semibold sm:bottom-4 sm:left-4 sm:px-3.5 sm:py-2 sm:text-base">
                 {photo.label}
               </figcaption>
             </figure>

@@ -1,3 +1,4 @@
+import { ContactForm } from "@/components/ContactForm";
 import { contactSeo } from "@/lib/seo";
 import { fullAddress, site } from "@/lib/site";
 
@@ -5,54 +6,62 @@ export const metadata = contactSeo;
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
+    <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
       <h1 data-reveal className="font-serif text-4xl text-pine-deep">
         Kontakt
       </h1>
-      <p data-reveal className="mt-4 max-w-2xl text-muted">
-        Telefon a e-mail doplníme po schůzce s vedením. Zatím zveřejňujeme sídlo
-        z veřejného rejstříku.
+      <p data-reveal className="mt-3 max-w-2xl text-muted">
+        Napište výboru, nebo nás najděte na adrese z rejstříku. Telefon
+        zveřejníme po schůzce s vedením.
       </p>
 
-      <div className="mt-10 grid gap-10 lg:grid-cols-2">
-        <section data-reveal>
-          <h2 className="font-serif text-2xl text-pine-deep">Sídlo</h2>
-          <address className="mt-4 rounded-xl border border-pine/10 bg-paper p-5 not-italic leading-relaxed text-muted">
-            {site.name}
-            <br />
-            {fullAddress()}
-            <br />
-            {site.address.country}
-          </address>
-          <dl className="mt-6 grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 text-sm">
-            <dt className="text-muted">IČO</dt>
-            <dd className="font-medium">{site.ico}</dd>
-            <dt className="text-muted">Rejstřík</dt>
-            <dd className="font-medium">{site.court}</dd>
-            <dt className="text-muted">Vznik</dt>
-            <dd className="font-medium">28. 7. 1992</dd>
-          </dl>
+      <div className="mt-8 grid gap-8 lg:grid-cols-2 lg:items-stretch">
+        <section data-reveal className="flex flex-col">
+          <h2 className="font-serif text-2xl text-pine-deep">Napsat spolku</h2>
+          <p className="mt-2 text-sm leading-relaxed text-muted">
+            Ozveme se na e-mail, který uvedete.
+          </p>
+          <div className="mt-4 flex-1">
+            <ContactForm />
+          </div>
         </section>
 
-        <section data-reveal>
-          <h2 className="font-serif text-2xl text-pine-deep">Mapa</h2>
-          <div className="mt-4 overflow-hidden rounded-xl border border-pine/15">
+        <section data-reveal className="flex min-h-[28rem] flex-col lg:min-h-0">
+          <h2 className="font-serif text-2xl text-pine-deep">Sídlo a mapa</h2>
+          <div className="relative mt-4 min-h-[22rem] flex-1 overflow-hidden rounded-xl border border-pine/15 lg:min-h-[28rem]">
             <iframe
               title={`Mapa sídla spolku, ${fullAddress()}`}
               src={site.mapEmbed}
-              className="h-80 w-full border-0"
+              className="absolute inset-0 h-full w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
+            <div className="absolute inset-x-0 bottom-0 bg-paper/92 p-4 backdrop-blur-sm">
+              <address className="not-italic text-sm leading-relaxed text-ink">
+                {site.name}
+                <br />
+                {fullAddress()}
+              </address>
+              <dl className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted">
+                <div>
+                  <dt className="inline">IČO </dt>
+                  <dd className="inline font-medium text-ink">{site.ico}</dd>
+                </div>
+                <div>
+                  <dt className="sr-only">Rejstřík</dt>
+                  <dd className="inline">{site.court}</dd>
+                </div>
+              </dl>
+              <p className="mt-2 text-sm">
+                <a
+                  className="text-pine underline underline-offset-2"
+                  href={site.mapLink}
+                >
+                  Otevřít větší mapu na OpenStreetMap
+                </a>
+              </p>
+            </div>
           </div>
-          <p className="mt-3 text-sm">
-            <a
-              className="text-pine underline underline-offset-2"
-              href={site.mapLink}
-            >
-              Otevřít větší mapu na OpenStreetMap
-            </a>
-          </p>
         </section>
       </div>
     </div>

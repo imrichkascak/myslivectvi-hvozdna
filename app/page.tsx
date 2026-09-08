@@ -39,15 +39,18 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto -mt-10 flex max-w-6xl items-end bg-fog px-4 pb-16 sm:px-6 md:mt-0 md:min-h-[calc(100dvh-5.5rem)] md:bg-transparent md:pt-28 md:pb-20 lg:pb-24">
           <div data-parallax-copy className="max-w-xl will-change-transform">
             <p className="text-xs font-semibold tracking-[0.18em] text-brass uppercase lg:hidden">
-              Myslivecký spolek · od roku 1992
+              Od roku 1992
             </p>
             <h1 className="mt-3 font-serif text-[2.15rem] leading-[1.08] text-pine-deep sm:text-5xl lg:mt-0">
-              Krajina, zvěř a lidé z Vrchoviny
+              Myslivecký spolek
+              <span className="block">Vrchovina Hvozdná</span>
             </h1>
+            <p className="mt-3 font-serif text-xl leading-snug text-pine sm:mt-4 sm:text-2xl">
+              Krajina, zvěř a lidé z Vrchoviny
+            </p>
             <p className="mt-4 text-base leading-relaxed text-muted sm:mt-5 sm:text-lg">
-              {site.name} sdružuje myslivce k péči o honitbu v katastru obce
-              Hvozdná. Stránky slouží sousedům, obci i členům — srozumitelně a
-              včas.
+              Sdružujeme myslivce k péči o honitbu v katastru obce Hvozdná.
+              Stránky slouží sousedům, obci i členům — srozumitelně a včas.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
               <Link
@@ -65,7 +68,7 @@ export default function HomePage() {
             </div>
           </div>
           <p className="hidden text-xs font-semibold tracking-[0.18em] text-brass uppercase lg:absolute lg:right-6 lg:bottom-24 lg:block">
-            Myslivecký spolek · od roku 1992
+            Od roku 1992
           </p>
         </div>
       </section>
