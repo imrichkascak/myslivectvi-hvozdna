@@ -74,6 +74,10 @@ body {
   top: 1rem;
 }
 
+.gallery-dialog::backdrop {
+  background: color-mix(in srgb, var(--pine-deep) 88%, black);
+}
+
 .hon-stripe {
   background: repeating-linear-gradient(
     -45deg,
@@ -82,4 +86,67 @@ body {
     #f4f6f1 10px,
     #f4f6f1 20px
   );
+}
+
+.hero-veil {
+  background: linear-gradient(
+    to top,
+    var(--fog) 0%,
+    var(--fog) 12%,
+    color-mix(in srgb, var(--fog) 88%, transparent) 28%,
+    color-mix(in srgb, var(--fog) 58%, transparent) 44%,
+    color-mix(in srgb, var(--fog) 22%, transparent) 60%,
+    transparent 72%
+  );
+}
+
+@media (max-width: 767px) {
+  .hero-veil {
+    background: linear-gradient(
+      to top,
+      var(--fog) 0%,
+      var(--fog) 22%,
+      color-mix(in srgb, var(--fog) 70%, transparent) 55%,
+      color-mix(in srgb, var(--fog) 22%, transparent) 82%,
+      transparent 100%
+    );
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    [data-parallax] {
+      animation: hero-media-parallax linear both;
+      animation-timeline: scroll();
+      animation-range: 0 90vh;
+    }
+
+    @media (min-width: 768px) {
+      [data-parallax-copy] {
+        animation: hero-copy-parallax linear both;
+        animation-timeline: scroll();
+        animation-range: 0 90vh;
+      }
+    }
+  }
+}
+
+@keyframes hero-media-parallax {
+  from {
+    transform: scale(1.1) translateY(0);
+  }
+
+  to {
+    transform: scale(1.02) translateY(14%);
+  }
+}
+
+@keyframes hero-copy-parallax {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-28%);
+  }
 }

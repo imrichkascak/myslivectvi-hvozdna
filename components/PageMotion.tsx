@@ -20,6 +20,8 @@ export function PageMotion({ children }: Props) {
 
   useGSAP(
     () => {
+      gsap.registerPlugin(ScrollTrigger);
+
       const mm = gsap.matchMedia();
 
       mm.add("(prefers-reduced-motion: no-preference)", () => {
@@ -55,26 +57,6 @@ export function PageMotion({ children }: Props) {
             },
           });
         });
-
-        const section = root.current?.querySelector("[data-parallax-section]");
-        const media = section?.querySelector("[data-parallax]");
-        if (section && media) {
-          gsap.fromTo(
-            media,
-            { yPercent: 0, scale: 1 },
-            {
-              yPercent: 6,
-              scale: 1.04,
-              ease: "none",
-              scrollTrigger: {
-                trigger: section,
-                start: "top top",
-                end: "bottom top",
-                scrub: 0.7,
-              },
-            },
-          );
-        }
       });
 
       return () => mm.revert();
