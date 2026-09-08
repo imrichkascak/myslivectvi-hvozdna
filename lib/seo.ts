@@ -77,7 +77,14 @@ export const honitbaSeo = pageMetadata({
   title: "Honitba a bezpečnost v lese",
   path: "/honitba",
   description:
-    "Honitba v katastru obce Hvozdná: jak se chovat v lese v den honu, kdy nevstupovat do revíru a kde sledovat oznámení MS Vrchovina Hvozdná.",
+    "Honitba v katastru Hvozdné: kdy do lesa nechodit v den honu, jak revír během roku funguje a co v něm dělá MS Vrchovina Hvozdná.",
+});
+
+export const gallerySeo = pageMetadata({
+  title: "Fotogalerie",
+  path: "/fotogalerie",
+  description:
+    "Fotogalerie Mysliveckého spolku Vrchovina Hvozdná: honitba, zvěř a areál ve Hvozdné na Vizovicku.",
 });
 
 export const newsSeo = pageMetadata({
@@ -91,7 +98,7 @@ export const contactSeo = pageMetadata({
   title: "Kontakt a sídlo",
   path: "/kontakt",
   description:
-    "Kontakt na MS Vrchovina Hvozdná: sídlo Myslivecká 38, 763 10 Hvozdná, IČO 48472964. Mapa a údaje zapsané u Krajského soudu v Brně.",
+    "Kontakt na MS Vrchovina Hvozdná: formulář, sídlo Myslivecká 38, 763 10 Hvozdná, IČO 48472964. Mapa a údaje zapsané u Krajského soudu v Brně.",
 });
 
 export const kickoffSeo = pageMetadata({

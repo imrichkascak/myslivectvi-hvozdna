@@ -38,6 +38,7 @@ export const nav = [
   { href: "/", label: "Úvod" },
   { href: "/o-nas", label: "O spolku" },
   { href: "/honitba", label: "Honitba" },
+  { href: "/fotogalerie", label: "Fotogalerie" },
   { href: "/aktuality", label: "Aktuality" },
   { href: "/kontakt", label: "Kontakt" },
 ] as const;

@@ -21,7 +21,7 @@ export default function AboutPage() {
 
       <Image
         src={asset("/images/oak-canopy.jpg")}
-        alt="Koruny dubů v lesním porostu"
+        alt="Jezero obklopené jehličnatým lesem a horami"
         width={1400}
         height={900}
         data-reveal

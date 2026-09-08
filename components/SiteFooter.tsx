@@ -29,6 +29,11 @@ export function SiteFooter() {
           </p>
           <ul className="mt-3 space-y-2 text-sm">
             <li>
+              <Link className="underline-offset-2 hover:underline" href="/fotogalerie">
+                Fotogalerie
+              </Link>
+            </li>
+            <li>
               <Link className="underline-offset-2 hover:underline" href="/aktuality">
                 Aktuality
               </Link>

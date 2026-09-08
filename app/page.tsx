@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { HomeGalleryCarousel } from "@/components/HomeGalleryCarousel";
+import { homeCarouselPhotos } from "@/lib/gallery";
 import { formatDate, posts } from "@/lib/posts";
 import { asset } from "@/lib/media";
 import { homeSeo } from "@/lib/seo";
@@ -101,6 +103,19 @@ export default function HomePage() {
 
       <section className="bg-paper px-4 pt-[clamp(5rem,11vh,8.5rem)] pb-[clamp(5rem,11vh,8.5rem)] sm:px-6">
         <div className="mx-auto max-w-6xl">
+          <HomeGalleryCarousel photos={homeCarouselPhotos}>
+            <div data-reveal>
+              <h2 className="font-serif text-3xl text-pine-deep">Fotogalerie</h2>
+              <p className="mt-3 max-w-2xl leading-relaxed text-muted">
+                Snímky z honitby a areálu. Listujte šipkami nebo tahem.
+              </p>
+            </div>
+          </HomeGalleryCarousel>
+        </div>
+      </section>
+
+      <section className="px-4 pt-[clamp(5rem,11vh,8.5rem)] pb-[clamp(5rem,11vh,8.5rem)] sm:px-6">
+        <div className="mx-auto max-w-6xl">
           <div data-reveal className="flex items-end justify-between gap-4">
             <h2 className="font-serif text-3xl leading-none text-pine-deep">
               Aktuality
@@ -115,7 +130,7 @@ export default function HomePage() {
           <ul data-reveal-stagger className="mt-12 grid gap-6 md:grid-cols-2">
             {posts.map((post) => (
               <li key={post.slug}>
-                <article className="h-full overflow-hidden rounded-xl border border-pine/10 bg-fog">
+                <article className="h-full overflow-hidden rounded-xl border border-pine/10 bg-paper">
                   <Link href={`/aktuality/${post.slug}`} className="block">
                     <Image
                       src={asset(post.image)}
