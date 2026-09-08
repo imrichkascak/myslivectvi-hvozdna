@@ -102,9 +102,9 @@ export const contactSeo = pageMetadata({
 });
 
 export const kickoffSeo = pageMetadata({
-  title: "Kick-off: návrh webu",
+  title: "Kick-off: stav webu před schůzkou",
   path: "/kickoff",
   description:
-    "Interní podklad ke schůzce s vedením MS Vrchovina Hvozdná. Není určen k indexaci ve vyhledávačích.",
+    "Interní podklad ke schůzce s vedením MS Vrchovina Hvozdná: co web už umí a co zbývá rozhodnout. Není určen k indexaci ve vyhledávačích.",
   robots: { index: false, follow: false },
 });
